@@ -3,24 +3,17 @@ import { useEffect, useState } from "react";
 
 const HeaderSection = () => {
    const [weather, setWeather] = useState([]);
+   const [temperature, setTemperature] = useState([]);
+   const [location, setLocation] = useState([]);
    useEffect(() => {
        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=52.468868477131615&lon=13.3898461&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
          .then((response) => response.json())
-         .then((data) => setWeather(data.weather[0]));
+         .then((data) => {
+            setWeather(data.weather[0]);
+            setTemperature(data.main);
+            setLocation(data.name);
+        });
      }, []);
-     const [temperature, setTemperature] = useState([]);
-   useEffect(() => {
-       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=52.468868477131615&lon=13.3898461&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
-         .then((response) => response.json())
-         .then((data) => setTemperature(data.main));
-     }, []);
-     const [location, setLocation] = useState([]);
-   useEffect(() => {
-       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=52.468868477131615&lon=13.3898461&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
-         .then((response) => response.json())
-         .then((data) => setLocation(data.name));
-     }, []);
-     //these useeffects can surely be combined into one? will try later 
   const weekday = [
     "Sunday",
     "Monday",
@@ -48,8 +41,7 @@ const HeaderSection = () => {
   let currentday = weekday[todaysdate.getDay()];
   let currentdate = todaysdate.getDate();
   let currentmonth = month[todaysdate.getMonth()];
-  let currenttemp = temperature.temp;
-  //toFixed() doesn't work on page reload, have to put it somehow in the useeffect 
+  let currenttemp = Math.round(temperature.temp); 
   return (
     <header>
       <h2>{`${currentday}, ${currentdate} ${currentmonth}`}</h2>
