@@ -1,5 +1,6 @@
 import "./headersection.css";
 import { useEffect, useState } from "react";
+import Moment from "react-moment";
 
 const HeaderSection = () => {
    const [weather, setWeather] = useState([]);
@@ -14,38 +15,13 @@ const HeaderSection = () => {
             setLocation(data.name);
         });
      }, []);
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+
   const todaysdate = new Date();
-  //can I use moments here to set the weekday and the month? 
-  let currentday = weekday[todaysdate.getDay()];
-  let currentdate = todaysdate.getDate();
-  let currentmonth = month[todaysdate.getMonth()];
   let currenttemp = Math.round(temperature.temp); 
+  
   return (
     <header>
-      <h2>{`${currentday}, ${currentdate} ${currentmonth}`}</h2>
+      <Moment format="dddd Do MMMM">{todaysdate}</Moment>
       <p>{`${weather.description}`}</p>
       <img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt=''/>
       <p>{`${currenttemp} degrees celcius`}</p>

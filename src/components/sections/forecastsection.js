@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Moment from "react-moment";
 
 const ForecastSection = () => {
+  // Separate so that the user can toggle between a day and week view
   const [forecastday, setForecastday] = useState([]);
   const [forecastweek, setForecastweek] = useState([]);
   useEffect(() => {
@@ -12,12 +13,16 @@ const ForecastSection = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        // Gets the first 8 entries in the fetched array (timeframe is 24 hours from now)
         setForecastday(data.list.slice(0, 9));
+        // Gets all entries (default)
         setForecastweek(data.list);
       });
   }, []);
 
-  function getEveryNth(arr) {
+  // Gets every eighth entry in the fetched array (every 24 hours is 8 entries, and we only want one per day)
+
+  function getEveryEighth(arr) {
     const result = [];
 
     for (let i = 0; i < arr.length; i++) {
@@ -29,37 +34,30 @@ const ForecastSection = () => {
     return result;
   }
 
-  let weeklyforecast = getEveryNth(forecastweek);
+  let weeklyforecast = getEveryEighth(forecastweek);
+
+  // Sets the timeframe that the user selects day/week, default is day, radio buttons change the selection onclick
 
   const [timeframe, setTimeframe] = useState("Today");
 
-  const toggleWeek = () => {
-    if (timeframe !== "Week") {
-      setTimeframe("Week");
-    }
-  };
-
-  const toggleToday = () => {
-    if (timeframe !== "Today") {
-      setTimeframe("Today");
-    }
-  };
   return (
     <div>
       <input
         type="radio"
         name="timeframe-change"
         id="radio-week"
-        onClick={toggleWeek}
+        onClick={() => setTimeframe("Week")}
       />
       <label htmlFor="radio-week">Week</label>
       <input
         type="radio"
         name="timeframe-change"
         id="radio-today"
-        onClick={toggleToday}
+        defaultChecked
+        onClick={() => setTimeframe("Today")}
       />
       <label htmlFor="radio-today">Today</label>
+      {/* Renders a different view depending on whether day or week view is selected */}
       {timeframe === "Today" &&
         forecastday.map((item, index) => (
           <ForecastTile
@@ -73,9 +71,9 @@ const ForecastSection = () => {
             icon={item.weather[0].icon}
           />
         ))}
-        {timeframe === "Week" && 
+      {timeframe === "Week" &&
         weeklyforecast.map((item, index) => (
-            <ForecastTile 
+          <ForecastTile
             key={`ForecastTile ${index}`}
             time={
               <Moment unix format="ddd">
@@ -83,7 +81,8 @@ const ForecastSection = () => {
               </Moment>
             }
             temp={`${Math.round(item.main.temp)} degrees celcius`}
-            icon={item.weather[0].icon}/>
+            icon={item.weather[0].icon}
+          />
         ))}
     </div>
   );
