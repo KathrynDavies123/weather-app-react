@@ -38,6 +38,7 @@ const HeaderSection = () => {
     "December",
   ];
   const todaysdate = new Date();
+  //can I use moments here to set the weekday and the month? 
   let currentday = weekday[todaysdate.getDay()];
   let currentdate = todaysdate.getDate();
   let currentmonth = month[todaysdate.getMonth()];

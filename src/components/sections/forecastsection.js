@@ -2,19 +2,35 @@ import "./forecastsection.css";
 import ForecastTile from "../tiles/forecasttile";
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
-import "moment-timezone";
 
 const ForecastSection = () => {
-  const [forecast, setForecast] = useState([]);
+  const [forecastday, setForecastday] = useState([]);
+  const [forecastweek, setForecastweek] = useState([]);
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=52.468868477131615&lon=13.3898461&cnt=9&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=52.468868477131615&lon=13.3898461&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     )
       .then((response) => response.json())
       .then((data) => {
-        setForecast(data.list);
+        setForecastday(data.list.slice(0, 9));
+        setForecastweek(data.list);
       });
   }, []);
+
+  function getEveryNth(arr) {
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (i % 8 === 0) {
+        result.push(arr[i]);
+      }
+    }
+
+    return result;
+  }
+
+  let weeklyforecast = getEveryNth(forecastweek);
+
   const [timeframe, setTimeframe] = useState("Today");
 
   const toggleWeek = () => {
@@ -28,7 +44,6 @@ const ForecastSection = () => {
       setTimeframe("Today");
     }
   };
-
   return (
     <div>
       <input
@@ -45,9 +60,31 @@ const ForecastSection = () => {
         onClick={toggleToday}
       />
       <label htmlFor="radio-today">Today</label>
-      {timeframe === "Today" && forecast.map((item, index) => (
-        <ForecastTile key={`ForecastTile ${index}`} time={<Moment unix format="HH">{item.dt}</Moment>} temp={`${Math.round(item.main.temp)} degrees celcius`} icon={item.weather[0].icon}/>
-      ))} 
+      {timeframe === "Today" &&
+        forecastday.map((item, index) => (
+          <ForecastTile
+            key={`ForecastTile ${index}`}
+            time={
+              <Moment unix format="HH">
+                {item.dt}
+              </Moment>
+            }
+            temp={`${Math.round(item.main.temp)} degrees celcius`}
+            icon={item.weather[0].icon}
+          />
+        ))}
+        {timeframe === "Week" && 
+        weeklyforecast.map((item, index) => (
+            <ForecastTile 
+            key={`ForecastTile ${index}`}
+            time={
+              <Moment unix format="ddd">
+                {item.dt}
+              </Moment>
+            }
+            temp={`${Math.round(item.main.temp)} degrees celcius`}
+            icon={item.weather[0].icon}/>
+        ))}
     </div>
   );
 };
