@@ -37,3 +37,28 @@ input[type="radio"]:checked + label {
 .forecast-scroll::-webkit-scrollbar {
   display: none;
 }
+
+@media(min-width:600px) {
+  .forecast-section {
+    margin-left:3rem;
+  }
+}
+
+@media(min-width:900px) {
+  .forecast-section {
+    margin:2rem 2rem 0 2rem; 
+    padding:0;
+  }
+
+  label {
+    margin-left: 0;
+    font-size:1.2rem;
+  }
+}
+
+@media(min-width:1200px) {
+ label {
+  font-size:1.5rem;
+  margin-bottom:1.5rem;
+ }
+}

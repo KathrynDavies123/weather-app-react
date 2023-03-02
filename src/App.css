@@ -7,6 +7,16 @@
     box-sizing: border-box;
 }
 
-.container {
-    background-color:#ffffff;
+.App {
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+@media(min-width:900px) {
+    .App {
+        display:grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 50% 50%;
+        height:100vh;
+    }
 }

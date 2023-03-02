@@ -14,7 +14,27 @@ h3 {
 
 .details-tile p {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 17px;
   color: #201c1c;
+}
+
+@media(min-width:900px) {
+  h3 {
+    font-size:1rem;
+  }
+
+  .details-tile p {
+    font-size:1.1rem;
+  }
+}
+
+@media(min-width:1200px) {
+  h3 {
+    font-size:1.1rem;
+  }
+
+  .details-tile p {
+    font-size:1.3rem;
+  }
 }

@@ -42,3 +42,41 @@ header img {
   font-size: 1rem;
   line-height: 24px;
 }
+
+@media(min-width:900px) {
+  header {
+    grid-row: 1/-1;
+    justify-content: center;
+    gap:1rem;
+  }
+
+  h1 {
+    font-size:1.3rem;
+  }
+
+  .header-temp {
+    font-size:2.5rem;
+  }
+
+  .header-location {
+    font-size:1.2rem;
+  }
+}
+
+@media(min-width:1200px) {
+  header {
+    gap:2rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-temp {
+    font-size: 2.8rem;
+  }
+
+  .header-location {
+    font-size:1.5rem;
+  }
+}

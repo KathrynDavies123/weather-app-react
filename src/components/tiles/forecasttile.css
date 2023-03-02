@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:8px;
+  gap:0.5rem;
 }
 
 .forecast-tile img {
@@ -19,7 +19,41 @@
 
 .forecast-time {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.8rem;
   line-height: 14px;
   color: #494343;
+}
+
+@media(min-width:900px) {
+  .forecast-tile img {
+    width:70px;
+    height:70px;
+  }
+
+  .forecast-temp {
+    font-size:1.2rem;
+  }
+
+  .forecast-time {
+    font-size:0.9rem;
+  }
+}
+
+@media(min-width:1200px) {
+  .forecast-tile {
+    gap:1rem;
+  }
+
+  .forecast-tile img {
+    width:80px;
+    height:80px;
+  }
+
+  .forecast-temp {
+    font-size: 1.3rem;
+  }
+
+  .forecast-time {
+    font-size: 1rem;
+  }
 }

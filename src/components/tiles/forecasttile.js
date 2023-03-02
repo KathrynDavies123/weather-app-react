@@ -2,7 +2,7 @@ import "./forecasttile.css";
 
 const ForecastTile = (props) => {
   return (
-    <div className="forecast-tile container">
+    <div className="forecast-tile">
       <img
         src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`}
         alt=""
