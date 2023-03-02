@@ -2,7 +2,7 @@ import "./forecasttile.css";
 
 const ForecastTile = (props) => {
   return (
-    <div>
+    <div className="forecast-tile">
       <p>
         {props.time}
       </p>

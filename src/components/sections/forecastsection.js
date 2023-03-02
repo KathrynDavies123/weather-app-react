@@ -58,6 +58,7 @@ const ForecastSection = () => {
       />
       <label htmlFor="radio-today">Today</label>
       {/* Renders a different view depending on whether day or week view is selected */}
+      <div className="forecast-scroll">
       {timeframe === "Today" &&
         forecastday.map((item, index) => (
           <ForecastTile
@@ -84,6 +85,7 @@ const ForecastSection = () => {
             icon={item.weather[0].icon}
           />
         ))}
+        </div>
     </div>
   );
 };

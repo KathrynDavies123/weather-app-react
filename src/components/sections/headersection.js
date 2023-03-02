@@ -24,12 +24,12 @@ const HeaderSection = () => {
   return (
     <header>
       <Moment format="dddd Do MMMM">{todaysdate}</Moment>
-      <p>{`${weather.description}`}</p>
       <img
         src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
         alt=""
       />
       <p>{`${currenttemp} degrees celcius`}</p>
+      <p>{`${weather.description}`}</p>
       <p>{`${location}`}</p>
     </header>
   );
