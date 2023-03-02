@@ -2,6 +2,8 @@ import "./detailssection.css";
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
 import DetailsTile from "../tiles/detailstile";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 const DetailsSection = () => {
   const [details, setDetails] = useState([]);
@@ -28,22 +30,25 @@ const DetailsSection = () => {
   let visibilitykm = details.visibility / 1000;
 
   return (
-    <div>
+    <div className="details-section">
       <h2>Today's Highlights</h2>
-      <div>
+      <div className="details-grid">
         <DetailsTile
           title="Feels Like"
-          measurement={`${feelslike} degrees celcius`}
+          measurement={`${feelslike} °C`}
+          img={<FontAwesomeIcon icon={solid("temperature-quarter")}/>}
         />
         <DetailsTile
           title="Min/Max Temp"
-          measurement={`${mintemp} degrees celcius`}
-          secondary={`${maxtemp} degrees celcius`}
+          measurement={`${mintemp} °C /`}
+          secondary={`${maxtemp} °C`}
+          img={<FontAwesomeIcon icon={solid("temperature-quarter")}/>}
         />
         <DetailsTile
           title="Wind Speed/Direction"
-          measurement={`${windspeed} km/h`}
+          measurement={`${windspeed} km/h /`}
           secondary={`${wind.deg} deg`}
+          img={<FontAwesomeIcon icon={solid("wind")}/>}
         />
         <DetailsTile
           title="Sunrise/Sunset"
@@ -57,12 +62,15 @@ const DetailsSection = () => {
               {sys.sunset}
             </Moment>
           }
+          img={<FontAwesomeIcon icon={solid("sun")}/>}
         />
         <DetailsTile
           title="Humidity"
           measurement={`${temperature.humidity} %`}
+          img={<FontAwesomeIcon icon={solid("droplet")}/>}
         />
-        <DetailsTile title="Visibility" measurement={`${visibilitykm} km`} />
+        <DetailsTile title="Visibility" measurement={`${visibilitykm} km`}
+        img={<FontAwesomeIcon icon={solid("eye")}/>} />
       </div>
     </div>
   );

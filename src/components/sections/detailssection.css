@@ -1,0 +1,15 @@
+.details-section {
+    padding:1rem;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 24px;
+  margin-bottom:1rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}

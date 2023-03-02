@@ -2,12 +2,14 @@ import "./detailstile.css";
 
 const DetailsTile = (props) => {
   return (
-    <div>
+    <div className="details-tile container">
       <h3>{props.title}</h3>
+      <div>
+        {props.img}
       <p>
         {props.measurement} {props.secondary}
       </p>
-    </div>
+    </div></div>
   );
 };
 

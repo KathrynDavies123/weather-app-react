@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: linear-gradient(
+    118.25deg,
+    #4f80fa 1.2%,
+    #3764d7 59.26%,
+    #335fd1 79.2%
+  );
+  color: #ffffff;
+  align-items: center;
+  gap:0.5rem;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 17px;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+}
+
+.header-temp {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 24px;
+}
+
+.header-desc {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 24px;
+}

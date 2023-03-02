@@ -41,7 +41,7 @@ const ForecastSection = () => {
   const [timeframe, setTimeframe] = useState("Today");
 
   return (
-    <div>
+    <div className="forecast-section">
       <input
         type="radio"
         name="timeframe-change"
@@ -64,11 +64,11 @@ const ForecastSection = () => {
           <ForecastTile
             key={`ForecastTile ${index}`}
             time={
-              <Moment unix format="HH">
+              <Moment unix format="HH:mm">
                 {item.dt}
               </Moment>
             }
-            temp={`${Math.round(item.main.temp)} degrees celcius`}
+            temp={`${Math.round(item.main.temp)} °C`}
             icon={item.weather[0].icon}
           />
         ))}
@@ -81,7 +81,7 @@ const ForecastSection = () => {
                 {item.dt}
               </Moment>
             }
-            temp={`${Math.round(item.main.temp)} degrees celcius`}
+            temp={`${Math.round(item.main.temp)} °C`}
             icon={item.weather[0].icon}
           />
         ))}
