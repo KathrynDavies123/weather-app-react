@@ -1,7 +1,10 @@
-import './detailstile.css';
+import "./detailstile.css";
 
-const DetailsTile = () => {
-    return ( <div></div> );
+const DetailsTile = (props) => {
+    return ( <div>
+        <h3>{props.title}</h3>
+        <p>{props.measurement} {props.secondary}</p>
+    </div> );
 }
  
 export default DetailsTile;
