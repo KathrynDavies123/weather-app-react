@@ -21,6 +21,21 @@ const HeaderSection = () => {
   }, []);
 
   const todaysdate = new Date();
+  
+  const [time, setTime] = useState([]);
+
+  useEffect(() => {
+    let timeofday = todaysdate.getHours();
+    setTime(timeofday);
+    if (time <= 7 || time >= 18) {
+      document.body.className = "night";
+    }
+
+    else {
+      document.body.className = ""
+    }
+  },[todaysdate, time])
+
   let currenttemp = Math.round(temperature.temp);
 
   return (
