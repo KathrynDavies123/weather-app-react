@@ -39,6 +39,12 @@ const HeaderSection = () => {
 
   let currenttemp = Math.round(temperature.temp);
 
+  // Capitalizes first letter of weather description
+  let firstletter = (weather.description).slice(0,1);
+  let restofword = (weather.description).slice(1);
+  let capitalfirst = firstletter.toUpperCase();
+  let weatherdescription = capitalfirst + restofword;
+
   return (
     <header>
       <h1><Moment format="dddd Do MMMM">{todaysdate}</Moment></h1>
@@ -48,7 +54,7 @@ const HeaderSection = () => {
         alt=""
       /></div>
       <p className="header-temp">{`${currenttemp} °C`}</p>
-      <p className="header-desc">{`${weather.description}`}</p>
+      <p className="header-desc">{`${weatherdescription}`}</p>
       <p className="header-location"><FontAwesomeIcon icon={solid('location-dot')} /> {`${location}`}</p>
     </header>
   );
