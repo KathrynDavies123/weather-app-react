@@ -24,7 +24,8 @@ const HeaderSection = () => {
   
   const [time, setTime] = useState([]);
 
-  useEffect(() => {
+  // Checks time of day and either adds or removes "night" class to the header element as necessary
+   useEffect(() => {
     let timeofday = todaysdate.getHours();
     setTime(timeofday);
     if (time <= 7 || time >= 18) {
@@ -41,10 +42,11 @@ const HeaderSection = () => {
   return (
     <header>
       <h1><Moment format="dddd Do MMMM">{todaysdate}</Moment></h1>
+      <div>
       <img
         src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
         alt=""
-      />
+      /></div>
       <p className="header-temp">{`${currenttemp} °C`}</p>
       <p className="header-desc">{`${weather.description}`}</p>
       <p className="header-location"><FontAwesomeIcon icon={solid('location-dot')} /> {`${location}`}</p>

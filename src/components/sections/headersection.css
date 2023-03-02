@@ -1,7 +1,7 @@
 header {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem;
   background: linear-gradient(
     118.25deg,
     #4f80fa 1.2%,
@@ -26,6 +26,9 @@ h1 {
 header img {
   width: 100px;
   height: 100px;
+  background: rgba(255,255,255,0.6);
+  border-radius:100%;
+  margin:1rem 0;
 }
 
 .header-temp {
