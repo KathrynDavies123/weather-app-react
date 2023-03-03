@@ -42,7 +42,8 @@ const ForecastSection = () => {
 
   return (
     <div className="forecast-section">
-      <div>
+      <fieldset>
+        <legend>Select Timeframe</legend>
         <input
           type="radio"
           name="timeframe-change"
@@ -58,7 +59,7 @@ const ForecastSection = () => {
           onClick={() => setTimeframe("Today")}
         />
         <label htmlFor="radio-today">Today</label>
-      </div>
+        </fieldset>
       {/* Renders a different view depending on whether day or week view is selected */}
       <div className="forecast-scroll">
         {timeframe === "Today" &&

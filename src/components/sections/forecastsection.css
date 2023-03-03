@@ -2,6 +2,14 @@
   margin: 1rem;
 }
 
+fieldset {
+  border:none;
+}
+
+legend {
+  color:#ffffff;
+}
+
 input[type="radio"] {
   appearance: none;
 }
