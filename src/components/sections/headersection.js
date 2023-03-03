@@ -60,6 +60,7 @@ const HeaderSection = () => {
       <p className="header-location">
         <FontAwesomeIcon icon={solid("location-dot")} /> {`${location}`}
       </p>
+      <div className="image-container"></div>
     </header>
   );
 };
