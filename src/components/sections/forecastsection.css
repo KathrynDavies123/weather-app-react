@@ -48,6 +48,9 @@ input[type="radio"]:checked + label {
   .forecast-section {
     margin:2rem 2rem 0 2rem; 
     padding:0;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
   }
 
   label {

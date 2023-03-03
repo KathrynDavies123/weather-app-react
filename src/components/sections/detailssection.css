@@ -17,8 +17,12 @@ h2 {
 @media(min-width:600px) {
   .details-section {
     margin-left:2rem;
-    width:600px;
   }
+
+  .details-grid {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
 }
 
 @media(min-width:900px) {
@@ -26,6 +30,7 @@ h2 {
     margin:0 3rem 3rem 2rem;
     padding:0;
     grid-column: 2/-1;
+    width:auto;
   }
 
   h2 {
@@ -34,12 +39,22 @@ h2 {
 
   .details-grid {
     row-gap:0.5rem;
+    grid-template-columns: 50% 50%;
   }
 }
 
 @media(min-width:1200px) {
+  .details-section {
+    margin-top:3rem;
+  }
+
   h2 {
     font-size:1.5rem;
     margin-bottom:1.5rem;
+  }
+
+  .details-grid {
+    row-gap: 1rem;
+    grid-template-columns: 33% 33% 33%;
   }
 }

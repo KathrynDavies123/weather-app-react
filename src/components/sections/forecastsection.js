@@ -42,50 +42,52 @@ const ForecastSection = () => {
 
   return (
     <div className="forecast-section">
-      <input
-        type="radio"
-        name="timeframe-change"
-        id="radio-week"
-        onClick={() => setTimeframe("Week")}
-      />
-      <label htmlFor="radio-week">Week</label>
-      <input
-        type="radio"
-        name="timeframe-change"
-        id="radio-today"
-        defaultChecked
-        onClick={() => setTimeframe("Today")}
-      />
-      <label htmlFor="radio-today">Today</label>
+      <div>
+        <input
+          type="radio"
+          name="timeframe-change"
+          id="radio-week"
+          onClick={() => setTimeframe("Week")}
+        />
+        <label htmlFor="radio-week">Week</label>
+        <input
+          type="radio"
+          name="timeframe-change"
+          id="radio-today"
+          defaultChecked
+          onClick={() => setTimeframe("Today")}
+        />
+        <label htmlFor="radio-today">Today</label>
+      </div>
       {/* Renders a different view depending on whether day or week view is selected */}
       <div className="forecast-scroll">
-      {timeframe === "Today" &&
-        forecastday.map((item, index) => (
-          <ForecastTile
-            key={`ForecastTile ${index}`}
-            time={
-              <Moment unix format="HH:mm">
-                {item.dt}
-              </Moment>
-            }
-            temp={`${Math.round(item.main.temp)} °C`}
-            icon={item.weather[0].icon}
-          />
-        ))}
-      {timeframe === "Week" &&
-        weeklyforecast.map((item, index) => (
-          <ForecastTile
-            key={`ForecastTile ${index}`}
-            time={
-              <Moment unix format="ddd">
-                {item.dt}
-              </Moment>
-            }
-            temp={`${Math.round(item.main.temp)} °C`}
-            icon={item.weather[0].icon}
-          />
-        ))}
-        </div>
+        {timeframe === "Today" &&
+          forecastday.map((item, index) => (
+            <ForecastTile
+              key={`ForecastTile ${index}`}
+              time={
+                <Moment unix format="HH:mm">
+                  {item.dt}
+                </Moment>
+              }
+              temp={`${Math.round(item.main.temp)} °C`}
+              icon={item.weather[0].icon}
+            />
+          ))}
+        {timeframe === "Week" &&
+          weeklyforecast.map((item, index) => (
+            <ForecastTile
+              key={`ForecastTile ${index}`}
+              time={
+                <Moment unix format="ddd">
+                  {item.dt}
+                </Moment>
+              }
+              temp={`${Math.round(item.main.temp)} °C`}
+              icon={item.weather[0].icon}
+            />
+          ))}
+      </div>
     </div>
   );
 };
