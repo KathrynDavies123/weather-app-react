@@ -62,7 +62,10 @@ header img {
     font-size:1.2rem;
   }
 
-  .image-container {
+  .location-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     width:100%;
     height:20%;
     margin-top:2rem;
@@ -93,7 +96,7 @@ header img {
 }
 
 @media(min-width:1400px) {
-  .image-container {
+  .location-container {
     width:80%;
   }
 }

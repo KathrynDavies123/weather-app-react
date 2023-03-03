@@ -57,10 +57,9 @@ const HeaderSection = () => {
       </div>
       <h1 className="header-temp">{`${currenttemp} °C`}</h1>
       <p className="header-desc">{`${description}`}</p>
-      <p className="header-location">
+      <div className="location-container"><p className="header-location">
         <FontAwesomeIcon icon={solid("location-dot")} /> {`${location}`}
-      </p>
-      <div className="image-container"></div>
+      </p></div>
     </header>
   );
 };
