@@ -11,17 +11,19 @@ h2 {
 
 .details-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns:repeat(2,1fr) ;
+  gap:1rem;
 }
 
 @media(min-width:600px) {
   .details-section {
     margin-left:2rem;
+    margin-right:2rem;
   }
 
   .details-grid {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: repeat(3,1fr);
 }
 }
 
@@ -39,22 +41,19 @@ h2 {
 
   .details-grid {
     row-gap:0.5rem;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2,1fr);
   }
 }
 
 @media(min-width:1200px) {
-  .details-section {
-    margin-top:3rem;
-  }
 
   h2 {
     font-size:1.5rem;
-    margin-bottom:1.5rem;
+    margin-bottom:2rem;
   }
 
   .details-grid {
-    row-gap: 1rem;
-    grid-template-columns: 33% 33% 33%;
+    gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
   }
 }

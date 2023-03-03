@@ -46,9 +46,9 @@ const HeaderSection = () => {
 
   return (
     <header>
-      <h1>
+      <p className="header-date-time">
         <Moment format="dddd Do MMMM">{todaysdate}</Moment>
-      </h1>
+      </p>
       <div>
         <img
           src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}

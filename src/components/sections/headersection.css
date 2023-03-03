@@ -10,16 +10,16 @@ header {
   );
   color: #ffffff;
   align-items: center;
-  gap:0.5rem;
+  gap:0.8rem;
 }
 
 .night header {
   background: linear-gradient(118.25deg, #4C4E53 1.2%, #0C1224 95.02%);
 }
 
-h1 {
+.header-date-time {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 17px;
 }
 
@@ -33,7 +33,7 @@ header img {
 
 .header-temp {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 24px;
 }
 
@@ -50,7 +50,7 @@ header img {
     gap:1rem;
   }
 
-  h1 {
+  .header-date-time {
     font-size:1.3rem;
   }
 
@@ -68,7 +68,7 @@ header img {
     gap:2rem;
   }
   
-  h1 {
+  .header-date-time {
     font-size: 1.8rem;
   }
 
@@ -77,6 +77,29 @@ header img {
   }
 
   .header-location {
+    font-size:1.5rem;
+  }
+}
+
+@media(min-width:1650px) {
+  header {
+    gap:3rem;
+  }
+
+  .header-date-time {
+    font-size:2.5rem;
+  }
+
+  header img {
+    width: 150px;
+    height:150px;
+  }
+
+  .header-temp {
+    font-size:3.5rem;
+  }
+
+  .header-desc {
     font-size:1.5rem;
   }
 }

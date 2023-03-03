@@ -36,19 +36,19 @@ const DetailsSection = () => {
         <DetailsTile
           title="Feels Like"
           measurement={`${feelslike} °C`}
-          img={<FontAwesomeIcon icon={solid("temperature-quarter")}/>}
+          img={<FontAwesomeIcon className="icon" icon={solid("temperature-quarter")}/>}
         />
         <DetailsTile
           title="Min/Max Temp"
           measurement={`${mintemp} °C /`}
           secondary={`${maxtemp} °C`}
-          img={<FontAwesomeIcon icon={solid("temperature-quarter")}/>}
+          img={<FontAwesomeIcon className="icon" icon={solid("temperature-quarter")}/>}
         />
         <DetailsTile
           title="Wind Speed/Direction"
           measurement={`${windspeed} km/h /`}
           secondary={`${wind.deg} deg`}
-          img={<FontAwesomeIcon icon={solid("wind")}/>}
+          img={<FontAwesomeIcon className="icon" icon={solid("wind")}/>}
         />
         <DetailsTile
           title="Sunrise/Sunset"
@@ -62,15 +62,15 @@ const DetailsSection = () => {
               {sys.sunset}
             </Moment>
           }
-          img={<FontAwesomeIcon icon={solid("sun")}/>}
+          img={<FontAwesomeIcon  className="icon" icon={solid("sun")}/>}
         />
         <DetailsTile
           title="Humidity"
           measurement={`${temperature.humidity} %`}
-          img={<FontAwesomeIcon icon={solid("droplet")}/>}
+          img={<FontAwesomeIcon className="icon" icon={solid("droplet")}/>}
         />
         <DetailsTile title="Visibility" measurement={`${visibilitykm} km`}
-        img={<FontAwesomeIcon icon={solid("eye")}/>} />
+        img={<FontAwesomeIcon className="icon" icon={solid("eye")}/>} />
       </div>
     </div>
   );
