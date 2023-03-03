@@ -25,7 +25,7 @@ const HeaderSection = () => {
         let weatherdescription = capitalfirst + restofword;
         setDescription(weatherdescription);
       });
-  }, []);
+  }, [weather.description]);
 
   const todaysdate = new Date();
 
