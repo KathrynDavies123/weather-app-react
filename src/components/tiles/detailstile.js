@@ -6,10 +6,11 @@ const DetailsTile = (props) => {
       <h3>{props.title}</h3>
       <div>
         {props.img}
-      <p>
-        {props.measurement} {props.secondary}
-      </p>
-    </div></div>
+        <p>
+          {props.measurement} {props.secondary}
+        </p>
+      </div>
+    </div>
   );
 };
 

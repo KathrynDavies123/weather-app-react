@@ -1,59 +1,57 @@
 .details-section {
-    padding:1rem;
+  padding: 1rem;
 }
 
 h2 {
   font-weight: 800;
   font-size: 1.1rem;
-  line-height: 24px;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
 .details-grid {
   display: grid;
-  grid-template-columns:repeat(2,1fr) ;
-  gap:1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
-@media(min-width:600px) {
+@media (min-width: 600px) {
   .details-section {
-    margin-left:2rem;
-    margin-right:2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   .details-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-@media(min-width:900px) {
+@media (min-width: 900px) {
   .details-section {
-    margin:0 3rem 3rem 2rem;
-    padding:0;
+    margin: 0 3rem 3rem 2rem;
+    padding: 0;
     grid-column: 2/-1;
-    width:auto;
+    width: auto;
   }
 
   h2 {
-    font-size:1.2rem;
+    font-size: 1.2rem;
   }
 
   .details-grid {
-    row-gap:0.5rem;
-    grid-template-columns: repeat(2,1fr);
+    row-gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media(min-width:1200px) {
-
+@media (min-width: 1350px) {
   h2 {
-    font-size:1.5rem;
-    margin-bottom:2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .details-grid {
     gap: 2rem;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

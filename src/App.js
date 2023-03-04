@@ -1,7 +1,7 @@
-import './App.css';
-import HeaderSection from './components/sections/headersection';
-import ForecastSection from './components/sections/forecastsection';
-import DetailsSection from './components/sections/detailssection';
+import "./App.css";
+import HeaderSection from "./components/sections/headersection";
+import ForecastSection from "./components/sections/forecastsection";
+import DetailsSection from "./components/sections/detailssection";
 
 function App() {
   return (

@@ -45,7 +45,7 @@ const HeaderSection = () => {
   let currenttemp = Math.round(temperature.temp);
 
   return (
-    <header>
+    <header className="flex-container">
       <p className="header-date-time">
         <Moment format="dddd Do MMMM">{todaysdate}</Moment>
       </p>
