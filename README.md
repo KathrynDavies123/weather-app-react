@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# This is a weather app using the [openweathermap](https://openweathermap.org/api) API. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made using React. I chose this as there were several small components to display that should have the same appearance, and this would be easy to achieve with mapping over the API data to display them. The live site can be found here: [Netlify site](https://main--glittering-pithivier-8e0578.netlify.app/).
 
-## Available Scripts
+I planned out a wireframe using Miro and made a plan of tasks using Trello.
 
-In the project directory, you can run:
+## Details :
 
-### `npm start`
+- API location data is for Kreuzberg/Tempelhof, the location of the Space Squad office.
+- Header background will turn dark when it is night time in the user's timezone, in daytime it will be sky blue.
+- Location container background will show a random image of Kreuzberg/Tempelhof from Unsplash.
+- User can select today's forecast or a week forecast.
+    - Today will show up to 24 hours from now in 3 hour increments.
+    - Week will show the next 5 days.
+- Highlights shows more detailed information about the current weather conditions.
+- Moment.js was used to display times and dates in different formats, from the unix data in the API.
+- Font Awesome was used for the icons in the "Highlights" section, all other weather icons are from the API itself.
+- Website is suited to all device widths, built with a mobile first design. 
+- Website passes with a relatively high score in accessibility and performance tests.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## For next time :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- I chose to use degrees Celcius for the temperature measurements as I am in Europe, but I would have liked to add a button to change this to Fahrenheit. Didn't have enough time to do this for this task but it's something I may add later. 
+- I would like to eventually add the ability to search for a location. The API does allow this, it would have just been time consuming to add this in and I did not think I would manage it in the timeframe I had. 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Overall this project was really fun to do and allowed me to test my React skills and challenge myself. I encountered some hiccups (infinite API calls - oops), but overall I knew what I wanted to do and managed it. Hope you like it too!
