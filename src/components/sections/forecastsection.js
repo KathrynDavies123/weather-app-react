@@ -9,7 +9,7 @@ const ForecastSection = () => {
   const [forecastweek, setForecastweek] = useState([]);
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=52.468868477131615&lon=13.3898461&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=50.940063809809125&lon=6.957682440739698&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     )
       .then((response) => response.json())
       .then((data) => {
