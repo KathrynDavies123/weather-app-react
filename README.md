@@ -6,7 +6,7 @@ I planned out a wireframe using Miro and made a plan of tasks using Trello.
 
 ## Details :
 
-- API location data is for Kreuzberg/Tempelhof, the location of the Space Squad office.
+- API location data is for Cologne.
 - Header background will turn dark when it is night time in the user's timezone, in daytime it will be sky blue.
 - Location container background will show a random image of Kreuzberg/Tempelhof from Unsplash.
 - User can select today's forecast or a week forecast.
